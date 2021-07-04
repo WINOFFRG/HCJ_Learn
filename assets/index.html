@@ -1,22 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>User Login Page</title>
+    
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
-<body>
+    <body>
+        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
 
-    <div class="main">
-        <h3>Login to your Account</h3>
-        <input type="email" class="inputfield" placeholder="Your Email">
-        <input type="password" class="inputfield" placeholder="Your Password">
-        <p class="subtitle1">Forgot your Password</p>
-        <button class="actionButton">Login</button>
-        <p class="subtitle2">You don't have an Account</p>
-    </div>
+        <div class="login">
+            <div class="login__content login-div">
+                <div class="login__forms">
 
-</body>
+                    <form action="" class="login__registre" id="login-in">
+
+                        <div>
+                            <img class="logo" src="logo.gif" alt="Paris" height="80px" width="80px">
+                        </div>    
+
+                        <div class="title">Sign In to Dashboard</div>
+    
+                        <div class="login__box username fields">
+                            <i class='bx bx-user login__icon'></i>
+                            <input type="text" placeholder="Username" class="login__input" required>
+                        </div>
+    
+                        <div class="login__box password fields">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="password" placeholder="Password" class="login__input" required>
+                        </div>
+
+                        <div class="login__forgot">
+                            <a href="#" class="login__forgot">Forgot password?</a>
+                        </div>
+                        
+                        <input type="submit" class="signup-button-submit" id="signin-button" value="Login">
+
+                        <div class="bottom_message">
+                            <span class="login__account">Don't have an Account ?</span>
+                            <span class="login__signin" id="sign-up">Sign Up</span>
+                        </div>
+                    </form>
+
+                    <form action="" class="login__create none" id="login-up">
+                        <div>
+                            <img class="logo" src="logo.gif" alt="Paris" height="80px" width="80px">
+                        </div>    
+
+                        <div class="title">Sign Up to Create Account</div>
+    
+                        <div class="login__box username fields">
+                            <i class='bx bx-user login__icon'></i>
+                            <input type="text" placeholder="Username" class="login__input" required>
+                        </div>
+    
+                        <div class="login__box username fields">
+                            <i class='bx bx-at login__icon'></i>
+                            <input type="text" placeholder="Email" class="login__input" required>
+                        </div>
+
+                        <div class="login__box fields password">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="password" placeholder="Password" class="login__input" required>
+                        </div>
+                        
+                        <input type="submit" class="signup-button-submit" id="signin-button" value="Create Account">
+
+                        <div class="bottom_message">
+                            <span class="login__account">Already have an Account ?</span>
+                            <span class="login__signin" id="sign-in">Sign In</span>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <script type="module" src="./firebase.js"></script>
+        <script type="module" src="./signin.js"></script>
+    </body>
 </html>

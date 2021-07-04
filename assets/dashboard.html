@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+        <script type="module" src="./firebase.js"></script>
+        <script type="module" src="./signin.js"></script>
+        
+        <!-- <button id="Logout">Logout</button> -->
+        
+        <a onclick="signOut()" style="cursor:pointer;" id="logout" class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+            Logout
+        </a>
+</body>
+</html>
