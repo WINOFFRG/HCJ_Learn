@@ -8,6 +8,7 @@
     <title>User Login Page</title>
     
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="alert.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
@@ -18,7 +19,15 @@
         <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js" crossorigin="anonymous"></script>
         <script type="module" src="./firebase.js" crossorigin="anonymous"></script>
 
+
+          
         <div class="login">
+
+            <div class="alert warning-alert" id="warning-alert">
+                <h3>Warning Alert Message</h3>
+                <a class="close">&times;</a>
+            </div>
+
             <div class="login__content login-div">
                 <div class="login__forms">
 
@@ -32,19 +41,19 @@
     
                         <div class="login__box username fields">
                             <i class='bx bx-user login__icon'></i>
-                            <input type="text" placeholder="Username" class="login__input login__input_username" required>
+                            <input type="text" placeholder="Username" class="login__input login__input_username" value="test@test.com" required>
                         </div>
     
                         <div class="login__box password fields">
                             <i class='bx bx-lock-alt login__icon'></i>
-                            <input type="password" placeholder="Password" class="login__input login__input_password" required>
+                            <input type="password" placeholder="Password" class="login__input login__input_password" value="testtest" required>
                         </div>
 
                         <div class="login__forgot">
                             <a href="#" class="login__forgot">Forgot password?</a>
                         </div>
                         
-                        <input type="submit" class="signin-button-submit" id="signin-button-submit" value="Login">
+                        <input type="" class="signin-button-submit" id="signin-button-submit" value="Login">
 
                         <div class="bottom_message">
                             <span class="login__account">Don't have an Account ?</span>
@@ -74,7 +83,7 @@
                             <input type="password" placeholder="Password" class="login__input login__input_password" required>
                         </div>
                         
-                        <input type="submit" class="signup-button-submit" id="signup-button-submit" value="Create Account">
+                        <input type="" class="signup-button-submit" id="signup-button-submit" value="Create Account">
 
                         <div class="bottom_message">
                             <span class="login__account">Already have an Account ?</span>
