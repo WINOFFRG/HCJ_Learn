@@ -62,8 +62,8 @@ function signOut(){
   });
 }
 
-document.getElementById('signup-button-submit').addEventListener("click", signInWithEmailPassword);
-// document.getElementById('signin-button-submit').addEventListener("click", signInWithEmailAndPassword);
+document.getElementById('signin-button-submit').addEventListener("click", signInWithEmailPassword); //Signin
+// document.getElementById('signup-button-submit').addEventListener("click", signInWithEmailPassword); //Signup
 
 // document.getElementById('Logout').addEventListener("click", signOut);
 
