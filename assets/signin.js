@@ -32,13 +32,14 @@ function signUpWithEmailPassword() {
 // });
 
 function signInWithEmailPassword() {
-  var email = document.querySelector('.user-input').value;
-  var password = document.querySelector('.pass-input').value;
+  var email = document.querySelector('.login__input_username').value;
+  var password = document.querySelector('.login__input_password').value;
 
-  console.log(email, ":", password);
-
-  if(email === null|| password === null)
-  return;
+  if(email === ""|| password === "")
+  {
+    console.log("Invalid Entry");
+    return;
+  }
 
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
@@ -61,8 +62,8 @@ function signOut(){
   });
 }
 
-document.getElementById('signup-button-submit').addEventListener("click", signUpWithEmailPassword);
-document.getElementById('signin-button-submit').addEventListener("click", signInWithEmailAndPassword);
+document.getElementById('signup-button-submit').addEventListener("click", signInWithEmailPassword);
+// document.getElementById('signin-button-submit').addEventListener("click", signInWithEmailAndPassword);
 
 // document.getElementById('Logout').addEventListener("click", signOut);
 
