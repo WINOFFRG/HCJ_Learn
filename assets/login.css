@@ -101,7 +101,7 @@ body{
     margin-bottom: 5%;
 }
 
-.signin-button:hover{
+.signin-button-submit:hover, .signup-button-submit:hover{
     background-color: hsla(33, 94%, 57%, 1);
     transition: background-color 200ms linear;
     /* background: linear-gradient(90deg, hsla(33, 94%, 57%, 1) 0%, hsla(333, 100%, 53%, 1) 100%); */

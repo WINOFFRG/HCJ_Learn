@@ -14,8 +14,9 @@
 
 </head>
     <body>
-        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
-        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js" crossorigin="anonymous"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js" crossorigin="anonymous"></script>
+        <script type="module" src="./firebase.js" crossorigin="anonymous"></script>
 
         <div class="login">
             <div class="login__content login-div">
@@ -65,12 +66,12 @@
     
                         <div class="login__box username fields">
                             <i class='bx bx-at login__icon'></i>
-                            <input type="text" placeholder="Email" class="login__input" required>
+                            <input type="text" placeholder="Email" class="login__input login__input_email" required>
                         </div>
 
                         <div class="login__box fields password">
                             <i class='bx bx-lock-alt login__icon'></i>
-                            <input type="password" placeholder="Password" class="login__input" required>
+                            <input type="password" placeholder="Password" class="login__input login__input_password" required>
                         </div>
                         
                         <input type="submit" class="signup-button-submit" id="signup-button-submit" value="Create Account">
@@ -85,7 +86,6 @@
             </div>
         </div>
     
-        <script type="module" src="./firebase.js"></script>
         <script type="module" src="./signin.js"></script>
     </body>
 </html>
