@@ -7,5 +7,7 @@ var firebaseConfig = {
     appId: "1:463333837761:web:e5cff3cb7b3cbf25d53d40"
 };
 
+// apiKey = ${{ ServiceWorkerRegistration.API_KEY 
+
 firebase.initializeApp(firebaseConfig);
 export default firebase;
