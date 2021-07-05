@@ -1,5 +1,5 @@
-const firebase = require("./firebase.js");
-const {loginMessage} = require("./login.js");
+import firebase from "./firebase.js";
+import { loginMessage } from "./login.js";
 
 var errorObject = {};
 
@@ -93,4 +93,4 @@ document.getElementById('signin-button-submit').addEventListener("click", signIn
 document.getElementById('signup-button-submit').addEventListener("click", signUpWithEmailPassword); //Signup
 document.getElementById('login__forgot').addEventListener("click", forgotPassword);
 
-module.exports = {errorObject};
+export {errorObject};

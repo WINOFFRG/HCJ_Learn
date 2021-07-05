@@ -1,4 +1,5 @@
-var {errorObject} = require("./authentication.js")
+import {errorObject} from '../authentication.js'
+
 
 // Switch Forms
 
@@ -6,6 +7,7 @@ const signUp = document.getElementById('sign-up'),
     signIn = document.getElementById('sign-in'),
     loginIn = document.getElementById('login-in'),
     loginUp = document.getElementById('login-up')
+
 
 signUp.addEventListener('click', ()=>{
     // Remove classes first if they exist
@@ -78,4 +80,4 @@ var loginMessage = () => {
 document.querySelector('.close').addEventListener("click", closePopUp);
 // document.getElementById('signin-button-submit').addEventListener("click", loginMessage); //Signin
 
-module.exports = {loginMessage};
+export {loginMessage};
