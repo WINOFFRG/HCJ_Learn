@@ -1,4 +1,4 @@
-import {errorObject} from '../authentication.js'
+import {errorObject} from './authentication.js'
 
 
 // Switch Forms
