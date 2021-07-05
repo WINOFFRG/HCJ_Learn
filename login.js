@@ -1,6 +1,5 @@
 import {errorObject} from './authentication.js'
 
-
 // Switch Forms
 
 const signUp = document.getElementById('sign-up'),
