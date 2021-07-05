@@ -23,11 +23,13 @@
           
         <div class="login">
 
-            <div class="alert warning-alert" id="warning-alert">
-                <h3>Warning Alert Message</h3>
+            <!-- Alert Message -->
+            <div class="alert success-alert" id="alert-message" style="display: none;">
+                <h3 id="login-message">Warning Alert Message</h3>
                 <a class="close">&times;</a>
             </div>
 
+            <!-- Login Form -->
             <div class="login__content login-div">
                 <div class="login__forms">
 
@@ -50,7 +52,7 @@
                         </div>
 
                         <div class="login__forgot">
-                            <a href="#" class="login__forgot">Forgot password?</a>
+                            <a href="#" class="login__forgot" id="login__forgot">Forgot password?</a>
                         </div>
                         
                         <input type="" class="signin-button-submit" id="signin-button-submit" value="Login">
@@ -95,6 +97,8 @@
             </div>
         </div>
     
-        <script type="module" src="./signin.js"></script>
+        <script type="module" src="./authentication.js"></script>
+        <script type="module" src="./login.js"></script>
+
     </body>
 </html>
