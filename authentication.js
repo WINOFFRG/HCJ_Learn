@@ -45,9 +45,9 @@ function signInWithEmailPassword()
 
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
-    // Signed in
     var user = userCredential.user;
-    // ...
+    errorObject = {};
+    loginMessage();
   })
   .catch((error) => {
     var errorCode = error.code;

@@ -12,12 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
 </head>
     <body>
         <script type="module" src="https://cdn.jsdelivr.net/npm/firebase@8.7.0/firebase-app.js"></script>
         <script type="module" src="https://cdn.jsdelivr.net/npm/firebase@8.7.0/firebase-auth.js"></script>
         <script type="module" src="./firebase.js" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
         <div class="login">
 
@@ -52,8 +54,29 @@
                         <div class="login__forgot">
                             <a href="#" class="login__forgot" id="login__forgot">Forgot password?</a>
                         </div>
-                        
+            
                         <input type="button" class="signin-button-submit" id="signin-button-submit" value="Login">
+
+                        <div class="my-signin2-css" id="my-signin2"></div>
+                        <script>
+                            function onSuccess(googleUser) {
+                            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                            }
+                            function onFailure(error) {
+                            console.log(error);
+                            }
+                            function renderButton() {
+                            gapi.signin2.render('my-signin2', {
+                                'scope': 'profile email',
+                                'width': 328,
+                                'height': 50,
+                                'longtitle': true,
+                                'theme': 'dark',
+                                'onsuccess': onSuccess,
+                                'onfailure': onFailure,
+                            });
+                            }
+                        </script>
 
                         <div class="bottom_message">
                             <span class="login__account">Don't have an Account ?</span>

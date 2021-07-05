@@ -8,8 +8,10 @@
 	 font-family: Quicksand;
 }
  .alert {
-	 /* width: 50%; */
-	 margin: 10px auto;
+	 width: 30vw;
+	 min-width: 400px;
+	 /* margin: 10px auto; */
+	 margin-bottom: 3%;
 	 padding: 30px;
 	 position: relative;
 	 border-radius: 5px;

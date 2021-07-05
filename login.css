@@ -117,6 +117,13 @@ body{
     font-size: 14px;
 }
 
+/* Google Sign In Button */
+.my-signin2-css 
+{
+    margin-bottom: 10px;    
+}
+
+
 /* BOTTOM TEXT */
 .login__signup, .login__signin {
     color: hsla(333, 100%, 53%, 1);

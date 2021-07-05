@@ -53,30 +53,26 @@ function closePopUp()
 }
 
 var loginMessage = () => {
-
-    var alertMessage = document.getElementById('alert-message');
-    alertMessage.classList.remove("success-alert");
-    alertMessage.classList.add("danger-alert");
     
-    console.log(errorObject);
-    document.getElementById('login-message').innerHTML = errorObject['errorMessageKey'];
-    openPopUp();
-    console.log("Error Message Popup");
-
-    if(errorObject)         //If error is there then show red doesnt work now
+    if (Object.keys(errorObject)['length'] === 0)
     {
-        console.log(errorObject);
+        document.getElementById('login-message').innerHTML = "Login Successfull";
+        var alertMessage = document.getElementById('alert-message');
+        alertMessage.classList.remove("danger-alert");
+        alertMessage.classList.add("success-alert");
+        openPopUp();
+    } 
+    else if(errorObject)         //If error is there then show red doesnt work now
+    {
+        var alertMessage = document.getElementById('alert-message');
+        alertMessage.classList.remove("success-alert");
+        alertMessage.classList.add("danger-alert");
+        
         document.getElementById('login-message').innerHTML = errorObject['errorMessageKey'];
         openPopUp();
-        console.log("Error Message Popup");
-    }
-    else if (errorObject === {})
-    {
-        console.log("Login Successfull Popup");
     }
 }
 
 document.querySelector('.close').addEventListener("click", closePopUp);
-// document.getElementById('signin-button-submit').addEventListener("click", loginMessage); //Signin
 
 export {loginMessage};
