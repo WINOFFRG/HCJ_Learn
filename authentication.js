@@ -77,16 +77,26 @@ function forgotPassword()
 
 function signInWithGoogle()
 {
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
+  var provider = new firebase.auth.GoogleAuthProvider();
 
-    auth.signInWithPopup(googleProvider)
-    .then(() => {
-      window.location.assign('./dashboard');
-    })
-    .catch(error => {
-      console.error(error);
-    })
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then((result) => {
+    
+    /** @type {firebase.auth.OAuthCredential} */
+    
+    var credential = result.credential;
+    var token = credential.accessToken;
+    var user = result.user;
+
+  }).catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
+  });
 }
+
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -102,7 +112,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-signInWithGoogleButton.addEventListener('click', signInWithGoogle);
+document.getElementById('login-with-google-btn').addEventListener('click', signInWithGoogle);
 document.getElementById('signin-button-submit').addEventListener("click", signInWithEmailPassword); //Signin
 document.getElementById('signup-button-submit').addEventListener("click", signUpWithEmailPassword); //Signup
 document.getElementById('login__forgot').addEventListener("click", forgotPassword);

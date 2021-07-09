@@ -102,7 +102,7 @@ body{
 }
 
 .signin-button-submit:hover, .signup-button-submit:hover{
-    background-color: rgb(51, 48, 48);
+    background-color: rgb(59, 56, 56);
     transition: background-color 200ms linear;
     /* background: linear-gradient(90deg, hsla(33, 94%, 57%, 1) 0%, hsla(333, 100%, 53%, 1) 100%); */
 }
@@ -168,6 +168,7 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
     color: #555;
+    opacity: 70%;
   }
   
   .separator::before,
