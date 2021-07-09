@@ -75,6 +75,19 @@ function forgotPassword()
   });
 }
 
+function signInWithGoogle()
+{
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(googleProvider)
+    .then(() => {
+      window.location.assign('./dashboard');
+    })
+    .catch(error => {
+      console.error(error);
+    })
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       const queryString = window.location.search;
@@ -89,6 +102,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+signInWithGoogleButton.addEventListener('click', signInWithGoogle);
 document.getElementById('signin-button-submit').addEventListener("click", signInWithEmailPassword); //Signin
 document.getElementById('signup-button-submit').addEventListener("click", signUpWithEmailPassword); //Signup
 document.getElementById('login__forgot').addEventListener("click", forgotPassword);

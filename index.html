@@ -9,17 +9,16 @@
     
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="alert.css">
+    <link rel="stylesheet" href="./css/siginButton.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
 </head>
     <body>
         <script type="module" src="https://cdn.jsdelivr.net/npm/firebase@8.7.0/firebase-app.js"></script>
         <script type="module" src="https://cdn.jsdelivr.net/npm/firebase@8.7.0/firebase-auth.js"></script>
         <script type="module" src="./firebase.js" crossorigin="anonymous"></script>
-        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
         <div class="login">
 
@@ -63,28 +62,12 @@
                         </div>
 
                         <div class="separator">OR</div>
-
-                        <div class="my-signin2-css" id="my-signin2"></div> 
-                        <script>
-                            function onSuccess(googleUser) {
-                            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-                            }
-                            function onFailure(error) {
-                            console.log(error);
-                            }
-                            function renderButton() {
-                            gapi.signin2.render('my-signin2', {
-                                'scope': 'profile email',
-                                'width': 320,
-                                'height': 50,
-                                'longtitle': true,
-                                'theme': 'dark',
-                                'onsuccess': onSuccess,
-                                'onfailure': onFailure
-                            });
-                            }
-                        </script>
-
+                        
+                        <div class="google-signin-btn">                            
+                            <button type="button" class="login-with-google-btn" >
+                                Sign in with Google
+                            </button>
+                        </div>
                         
                     </form>
 
