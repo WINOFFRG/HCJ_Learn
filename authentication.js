@@ -75,28 +75,36 @@ function forgotPassword()
   });
 }
 
-function signInWithGoogle()
-{
+function googleSignInRedirect() {
   var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
-  firebase.auth()
-  .signInWithPopup(provider)
+  provider.setCustomParameters({
+    'login_hint': 'user@example.com'
+  });
+  firebase.auth().signInWithRedirect(provider)
   .then((result) => {
-    
-    /** @type {firebase.auth.OAuthCredential} */
-    
-    var credential = result.credential;
-    var token = credential.accessToken;
-    var user = result.user;
+    if (result.credential) {
+      /** @type {firebase.auth.OAuthCredential} */
+      var credential = result.credential;
 
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = credential.accessToken;
+      // ...
+    }
+    // The signed-in user info.
+    var user = result.user;
   }).catch((error) => {
+    // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
+    // The email of the user's account used.
     var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
+    // ...
   });
 }
-
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -112,7 +120,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-document.getElementById('login-with-google-btn').addEventListener('click', signInWithGoogle);
+document.getElementById('login-with-google-btn').addEventListener('click', googleSignInRedirect);
 document.getElementById('signin-button-submit').addEventListener("click", signInWithEmailPassword); //Signin
 document.getElementById('signup-button-submit').addEventListener("click", signUpWithEmailPassword); //Signup
 document.getElementById('login__forgot').addEventListener("click", forgotPassword);

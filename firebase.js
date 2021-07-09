@@ -1,6 +1,6 @@
 var firebaseConfig = {
     apiKey: "AIzaSyBBgVvTLJmjjL4e-naTNgXAaFwKIoGFEwk",
-    authDomain: "*",
+    authDomain: "winoffrg.github.io",
     projectId: "project-1-usersetup",
     storageBucket: "project-1-usersetup.appspot.com",
     messagingSenderId: "463333837761",
