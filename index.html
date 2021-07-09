@@ -57,7 +57,14 @@
             
                         <input type="button" class="signin-button-submit" id="signin-button-submit" value="Login">
 
-                        <div class="my-signin2-css" id="my-signin2"></div>
+                        <div class="bottom_message">
+                            <span class="login__account">Don't have an Account ?</span>
+                            <span class="login__signin" id="sign-up">Sign Up</span>
+                        </div>
+
+                        <div class="separator">OR</div>
+
+                        <div class="my-signin2-css" id="my-signin2"></div> 
                         <script>
                             function onSuccess(googleUser) {
                             console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -68,20 +75,17 @@
                             function renderButton() {
                             gapi.signin2.render('my-signin2', {
                                 'scope': 'profile email',
-                                'width': 328,
+                                'width': 320,
                                 'height': 50,
                                 'longtitle': true,
                                 'theme': 'dark',
                                 'onsuccess': onSuccess,
-                                'onfailure': onFailure,
+                                'onfailure': onFailure
                             });
                             }
                         </script>
 
-                        <div class="bottom_message">
-                            <span class="login__account">Don't have an Account ?</span>
-                            <span class="login__signin" id="sign-up">Sign Up</span>
-                        </div>
+                        
                     </form>
 
                     <form action="" class="login__create none" id="login-up">

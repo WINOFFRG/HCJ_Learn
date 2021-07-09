@@ -120,9 +120,8 @@ body{
 /* Google Sign In Button */
 .my-signin2-css 
 {
-    margin-bottom: 10px;    
+    align-content: center;
 }
-
 
 /* BOTTOM TEXT */
 .login__signup, .login__signin {
@@ -148,8 +147,7 @@ body{
   }
 
 .bottom_message{
-    /* position: relative; */
-    align-content: center;
+    position: relative;
     text-align: center;
 }
 
@@ -161,3 +159,28 @@ body{
 .none{
     display: none;
 }
+
+/* Line Separator */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #555;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #555;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
