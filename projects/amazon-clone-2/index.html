@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon 2.0</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./index.js" defer></script>
+    <script src="./script.js"></script>
+
+</head>
+<body>
+    <div class="bg-white w-full">
+        <div class="header h-16 bg-gray-900 flex items-center">
+            <div class="logo w-1/5 h-16 ml-10">
+                <a href="index.html">
+                    <img class ="w-28 h-16 object-contain text-white" src="https://www.vhv.rs/dpng/f/453-4533095_soundcloud-logo-png-transparent-background.png" alt="">
+                </a>
+            </div>
+            <input class="h-9 w-60 bg-gray-700 border-gray-500 border-opacity-75 rounded-l-xl px-3 text-white ml-6 focus:outline-none placeholder-white" id="search" type="text" placeholder="Search something here">
+            <div class="categories h-9 w-30 bg-gray-600 border-gray-500 border-l border-opacity-75 px-3 text-white flex items-center">
+                Categories
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <div class="search-icon h-9 w-10 bg-yellow-500 rounded-r-xl flex justify-center items-center text-white">
+                <svg class="h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <!-- Right Icons -->
+            <div class="icons text-white flex items-center ml-auto mr-8 w-4/12 h-16 justify-around">
+                <div class="prime-logo h-8 w-28 cursor-pointer"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+                <a href="cart.html">
+                    <div class="cart-icon h-10 w-10 bg-yellow-500 flex items-center justify-center rounded-xl relative">  <!--- Relative Positioning for Cart number-->
+                        <div class="cart-item-number absolute text-gray-800 top-0 right-0 -top-1 -right-1 h-4 w-4 rounded-full flex justify-center items-center bg-white">1</div>
+                        <svg class="h-5 w-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                </a>
+                <div class="sign-in mx-4 ">
+                    <h4 class="signin-text text-yellow-500 text-sm">Hello, Sign In</h4>
+                    <h4 class="account text-gray-200 text-2s">Accounts & Lists</h4>
+                </div>
+                <div class="profile-logo h-10 w-10 cursor-pointer"></div>
+                <!-- <svg class="h-12 w-12 rounded-full" data-jdenticon-value="Rohan Gupt"></svg> -->
+            </div>
+        </div>
+        <!-- Main Box -->
+        <div class="main flex">
+            <div class="main-sidebar w-1/5 bg-gray-900 border-gray-700 border-t-2 p-6">
+                <div class="sidebar-categories">
+                    <div class="sidebar-main-categories text-yellow-500 cursor-pointer flex font-bold mb-3 p-2 bg-gray-700 rounded-lg">
+                        <span class="w-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </span>
+                        <span>Categories</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Echo and Alexa</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Kindle</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Books</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Electronics</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Home and Garden</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-4">
+                        <span class="w-8"></span>
+                        <span>Fashion</span>
+                    </div>
+                     <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 hover:bg-gray-700 rounded-xl mb-4">
+                        <span class="w-8"><i class="fas fa-percent"></i></span>
+                        <span>Sell on Amazon</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 hover:bg-gray-700 rounded-xl">
+                        <span class="w-8"><i class="far fa-question-circle"></i></span>
+                        <span>Help</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-section flex-1 p-6 bg-gray-100">
+                <div class="main-section-banner h-44 rounded-lg flex items-end">
+                    <div class="button bg-white w-36 h-10 rounded-full flex justify-center items-center m-4 cursor-pointer">
+                        <h4 class="text-bold text-yellow-500">Browse Products</h4>
+                    </div>
+                </div>
+
+                <div class="main-section-categories mt-10">
+                    <div class="popular-categories flex">
+                        <h1 class="font-bold text-gray-700 text-2xl flex-grow items-center">Popular Categories ⭐</h1>
+                        <div class="amazon-app-banner w-4/12 h-10 rounded-lg cursor-pointer"></div>
+                    </div>
+                    <div class="categories mt-5 flex">
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
+                                <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+                            </svg>
+                        </div>
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                              </svg>
+                        </div>
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </div>
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                            </svg>
+                        </div>
+                        <div class="icon-desktop h-20 w-20 bg-white rounded-xl flex justify-center items-center cursor-pointer ml-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-sections-deals">
+                    <h1 class="text-2xl font-bold text-gray-700 mt-7 mb-4">Hot Deals 🔥</h1>
+                    <div class="main-section-products flex flex-wrap">
+                        <div class="main-product border p-3 bg-gray-200 rounded border-gray-500 mr-5 mb-5 hidden">
+                            <div class="product-image w-48 h-52 bg-white rounded-lg p-4 border">
+                                <img class="w-full h-full object-contain " src="" alt="Loading">
+                            </div>
+                            <div class="product-name text-gray-700 font-bold mt-2 text-sm hover:text-yellow-600 flex truncate">
+                                Loading
+                            </div>
+                            <div class="product-make text-green-700 font-bold">
+                                Loading
+                            </div>
+                            <div class="product-rating text-yellow-500 font-bold my-1">
+                                Loading
+                            </div>
+                            <div class="product-price font-bold text-gray-700 text-lg border-t border-dashed border-gray-400 mt-2">
+                                Loading
+                            </div>
+                            <div class="button-container flex justify-center items-center">
+                                <div class="add-to-cart bg-yellow-500 w-44 h-8 flex justify-center items-center border-gray-500 border text-gray-700 rounded cursor-pointer mt-2 hover:bg-yellow-400">
+                                    ADD TO CART
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Carousel -->
+                 <div class="carousel relative mt-6">
+                    <div class="bg-gray-600 w-8 h-52 opacity-50 absolute">
+                    </div>
+                    <div class="left-btn absolute top-24 left-1">
+                        <button id="carousel__button--prev" aria-label="Previous Slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel__item carousel__item--visible">
+                        <img src="https://i.ibb.co/JnmTD12/banner.jpg" alt="">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="https://www.junglescout.com/wp-content/uploads/2020/05/Prime-day-banner.png" alt="">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="./assets/HeroPC_3000x1200_SVA._CB667240774_.jpg" alt="">
+                    </div>
+                    
+                    <div class="bg-gray-700 w-8 h-52 opacity-50 absolute right-0 top-0">
+                    </div>
+                    <div class="right-btn absolute top-24 -right-4">
+                        <button class="absolute inset-y-0 right-5" id="carousel__button--next" aria-label="Next Slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                </div>
+                <div class="below-banner w-auto h-80 bg-white mt-8"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+ -->

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon 2.0</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.0/dist/jdenticon.min.js" async integrity="sha384-VngWWnG9GS4jDgsGEUNaoRQtfBGiIKZTiXwm9KpgAeaRn6Y/1tAFiyXqSzqC8Ga/" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="bg-white w-full">
+        <div class="header h-16 bg-gray-900 flex items-center">
+            <div class="logo w-1/5 h-16 ml-10">
+                <a href="index.html">
+                    <img class="w-28 h-16 object-contain text-white" src="https://www.vhv.rs/dpng/f/453-4533095_soundcloud-logo-png-transparent-background.png" alt="">
+                </a>            
+            </div>
+            <input class="h-9 w-60 bg-gray-700 border-gray-500 border-opacity-75 rounded-l-xl px-3 text-white ml-6 focus:outline-none placeholder-white" id="search" type="text" placeholder="Search something here">
+            <div class="categories h-9 w-30 bg-gray-600 border-gray-500 border-l border-opacity-75 px-3 text-white flex items-center">
+                Categories
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <div class="search-icon h-9 w-10 bg-yellow-500 rounded-r-xl flex justify-center items-center text-white">
+                <svg class="h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <!-- Right Icons -->
+            <div class="icons text-white flex items-center ml-auto mr-8 w-96 h-16 justify-around">
+                <a href="index.html">
+                    <div class="prime-logo h-8 w-28 cursor-pointer"></div>
+                </a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+                <div class="cart-icon h-10 w-10 bg-yellow-500 flex items-center justify-center rounded-xl relative">  <!--- Relative Positioning for Cart number-->
+                    <div class="cart-item-number absolute text-gray-800 top-0 right-0 -top-1 -right-1 h-4 w-4 rounded-full flex justify-center items-center bg-white">1</div>
+                    <svg class="h-5 w-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div class="profile-logo h-10 w-10 cursor-pointer"></div>
+                <!-- <svg class="h-12 w-12 rounded-full" data-jdenticon-value="Rohan Gupt"></svg> -->
+            </div>
+        </div>
+        <!-- Main Box -->
+        <div class="main flex">
+            <div class="main-sidebar w-1/5 bg-gray-900 border-gray-700 border-t-2 p-6 h-screen">
+                <div class="sidebar-categories">
+                    <div class="sidebar-main-categories text-yellow-500 cursor-pointer flex font-bold mb-3 p-2 bg-gray-700 rounded-lg">
+                        <span class="w-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </span>
+                        <span>Categories</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Echo and Alexa</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Kindle</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Books</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Electronics</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2">
+                        <span class="w-8"></span>
+                        <span>Home and Garden</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 mb-4">
+                        <span class="w-8"></span>
+                        <span>Fashion</span>
+                    </div>
+                     <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 hover:bg-gray-700 rounded-xl mb-4">
+                        <span class="w-8"><i class="fas fa-percent"></i></span>
+                        <span>Sell on Amazon</span>
+                    </div>
+                    <div class="sidebar-main-category text-white cursor-pointer flex font-bold p-2 hover:bg-gray-700 rounded-xl">
+                        <span class="w-8"><i class="far fa-question-circle"></i></span>
+                        <span>Help</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-section flex-1 p-6 bg-white">
+                <h1 class="text-gray-500 text-3xl font-bold mb-6">Shopping Cart</h1>
+                <div class="table-titles font-bold text-gray-400 flex">
+                    <h2 class="flex-grow pl-10">Products</h2>
+                    <h2 class="w-48 pl-3">Count</h2>
+                    <h2 class="w-48">Total Cost</h2>
+                    <span class="w-10"></span>
+                </div>
+                <!-- Cart Items -->
+                <div class="cart-items mt-5">
+                    <div class="cart-item flex items-center pb-4 border-b border-gray-100">
+                        <div class="cart-item-image w-40 h-24 bg-white p-4 rounded-lg">
+                            <img class="w-full h-full object-contain" src="https://content.abt.com/image.php/apple-macbook-13-m1-512gb-laptop-MYDC2LLA.jpg?image=/images/products/BDP_Images/apple-macbook-13-m1-512gb-laptop-MYDC2LLA.jpg">
+                        </div>
+                        <div class="cart-item-detail flex-grow">
+                            <div class="cart-item-title font-bold text-sm text-gray-600">
+                                Apple MacBook Pro 13,3
+                            </div>
+                            <div class="cart-item-brand text-sm text-gray-400">
+                                Apple
+                            </div>
+                        </div> 
+                        <div class="cart-item-counter w-48 flex items-center">
+                            <div class="chevron-left cursor pointer text-gray-400 bg-gray-100 rounded h-6 w-6 flex justify-center items-center hover:bg-gray-200 mr-2">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <h4 class="text-gray-400">x1</h4>
+                            <div class="chevron-right cursor pointer text-gray-400 bg-gray-100 rounded h-6 w-6 flex justify-center items-center hover:bg-gray-200 ml-2">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="cart-item-total-cost w-48 font-bold text-gray-400">
+                            $1,149.00
+                        </div>
+                        <div class="cart-item-delete w-10 font-bold text-gray-300 cursor-pointer hover:text-gray-400">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="cart-item flex items-center pb-4 border-b border-gray-100">
+                        <div class="cart-item-image w-40 h-24 bg-white p-4 rounded-lg">
+                            <img class="w-full h-full object-contain" src="https://images-eu.ssl-images-amazon.com/images/I/41V5KQ500IL._SY300_SX300_QL70_FMwebp_.jpg">
+                        </div>
+                        <div class="cart-item-detail flex-grow">
+                            <div class="cart-item-title font-bold text-sm text-gray-600">
+                                Nintendo Switch
+                            </div>
+                            <div class="cart-item-brand text-sm text-gray-400">
+                                Nintendo
+                            </div>
+                        </div>
+                        <div class="cart-item-counter w-48 flex items-center">
+                            <div class="chevron-left cursor pointer text-gray-400 bg-gray-100 rounded h-6 w-6 flex justify-center items-center hover:bg-gray-200 mr-2">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <h4 class="text-gray-400">x2</h4>
+                            <div class="chevron-right cursor pointer text-gray-400 bg-gray-100 rounded h-6 w-6 flex justify-center items-center hover:bg-gray-200 ml-2">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="cart-item-total-cost w-48 font-bold text-gray-400">
+                            $290.00
+                        </div>
+                        <div class="cart-item-delete w-10 font-bold text-gray-300 cursor-pointer hover:text-gray-400">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cart Item Total -->
+                <div class="complete-order flex justify-end mt-10">
+                    <div class="total-cost mr-7">
+                        <h2 class="text-gray-400">Total Cost</h2>
+                        <div class="total-cost-amount font-bold text-3xl text-gray-600">
+                            $1,439.00
+                        </div>
+                    </div>
+                    <div class="complete-order-button w-56 flex items-center justify-center bg-yellow-500 rounded text-white cursor-pointer hover:bg-yellow-600">
+                        Complete Order
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

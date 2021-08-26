@@ -1,0 +1,90 @@
+.main-section-banner{
+    background-image: url("https://i.ibb.co/JnmTD12/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.prime-logo{
+    background-image: url("https://www.nicepng.com/png/full/168-1682347_amazon-arrow-png.png");
+    background-size: cover;
+    background-position: center;
+}
+.profile-logo{
+    background-image: url("https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png");
+    background-size: cover;
+    background-position: center;
+}
+.below-banner{
+    background-image: url("https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2021/img/Mobile_Traffic_/XCM_Manual_1309542_1578842_IN_in_mobile_traffic_dppage_in_en_3681577_1500x487_en_IN.jpg");
+    background-size:contain;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+.amazon-app-banner{
+  background-image: url(https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2021/img/Mobile_Traffic_/XCM_Manual_1321458_1651511_IN_3781247_400x39_en_IN._CB655944656_.jpg);
+  background-size:contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+  }
+  
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
+    display: none;
+  }
+  
+.carousel .carousel__item img {
+    width: 100%;
+    height: 200px;
+    background-size:contain;
+    object-fit: cover;
+  }
+  
+.carousel .carousel__item--visible {
+    display: block;
+  }
+
+.carousel__item--visible {
+    animation: fadeVisibility 0.5s;
+}
+
+.carousel .carousel__actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+.carousel .carousel__actions button {
+    border-radius: 50px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+  
+.carousel .carousel__actions button#carousel__button--prev {
+    margin-left: 20px;
+  }
+  
+.carousel .carousel__actions button#carousel__button--next {
+    margin-right: 20px;
+  }
+  
+@keyframes fadeVisibility {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: opacity linear;
+    }
+  }

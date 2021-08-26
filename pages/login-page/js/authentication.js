@@ -87,23 +87,34 @@ function googleSignInRedirect() {
     if (result.credential) {
       /** @type {firebase.auth.OAuthCredential} */
       var credential = result.credential;
-
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = credential.accessToken;
-      // ...
+
+      firebase.auth()
+        .getRedirectResult()
+        .then((result) => {
+          if (result.credential) {
+            /** @type {firebase.auth.OAuthCredential} */
+            var credential = result.credential;
+            var token = credential.accessToken;
+            window.location.href = "./dashboard.html"
+          }
+          var user = result.user;
+        }).catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          var email = error.email;
+          var credential = error.credential;
+      });
     }
-    // The signed-in user info.
     var user = result.user;
   }).catch((error) => {
-    // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    // The email of the user's account used.
     var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
-    // ...
   });
+
 }
 
 firebase.auth().onAuthStateChanged(function(user) {

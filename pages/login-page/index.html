@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/alert.css">
     <link rel="stylesheet" href="./css/siginButton.css">
+    <link rel="stylesheet" href="./css/dasboard.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
@@ -21,14 +23,15 @@
         <script type="module" src="./js/firebase.js" crossorigin="anonymous"></script>
         <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-
+             
         <div class="login">
 
-            <!-- Alert Message -->
             <div class="alert success-alert" id="alert-message" style="display: none;">
                 <h3 id="login-message">Warning Alert Message</h3>
                 <a class="close">&times;</a>
             </div>
+            
+            <div id="snackbar">This is a Pop Up !</div>
 
             <!-- Login Form -->
             <div class="login__content login-div">
@@ -55,8 +58,11 @@
                         <div class="login__forgot">
                             <a href="#" class="login__forgot" id="login__forgot">Forgot password?</a>
                         </div>
-            
-                        <input type="button" class="signin-button-submit" id="signin-button-submit" value="Login">
+                        
+
+                        <!-- <button id="show-snackbar">Show Snackbar</button> -->
+                        <!-- The actual snackbar -->
+                        <input type="button" class="signin-button-submit" id="show-snackbar" value="Login">
 
                         <div class="bottom_message">
                             <span class="login__account">Don't have an Account ?</span>
