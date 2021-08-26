@@ -9,4 +9,8 @@ The repository currently contains three types of assets 👇
 
 🌈 Each directory has work folder related to it, with a `readme.md` file and preview URL. The file also mentions the tools/technologies used and topics/tags that were brought into use while coding.
 
-<img src="./open-doodles-sleek.svg" style="width: 10px"/>
+<img src="./open-doodles-sleek.svg" width="96" />
+
+<img src="https://img.shields.io/badge/Amazon%20Clone%202.0-Rohan%Gupta-blue?style=social&logo=appveyor">
+<a href="https://winoffrg.github.io/silent-lizard/projects/amazon-clone-2">
+</img>
