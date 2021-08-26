@@ -10,5 +10,7 @@ The repository currently contains three types of assets 👇
 🌈 Each directory has work folder related to it, with a `readme.md` file and preview URL. The file also mentions the tools/technologies used and topics/tags that were brought into use while coding.
 
 <img src="./open-doodles-sleek.svg" width="96" />
+<img src="./flame-no-connection.png" width="96" align="right"/>
+
 
 https://winoffrg.github.io/silent-lizard/projects/amazon-clone-2
