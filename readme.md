@@ -11,4 +11,4 @@ The repository currently contains three types of assets 👇
 
 <img src="./open-doodles-sleek.svg" width="96" />
 
-<a href="https://winoffrg.github.io/silent-lizard/projects/amazon-clone-2">
+https://winoffrg.github.io/silent-lizard/projects/amazon-clone-2
