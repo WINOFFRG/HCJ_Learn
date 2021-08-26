@@ -9,4 +9,4 @@ The repository currently contains three types of assets 👇
 
 🌈 Each directory has work folder related to it, with a `readme.md` file and preview URL. The file also mentions the tools/technologies used and topics/tags that were brought into use while coding.
 
-<img src="./open-doodles-sleek.svg" style="width: 100px"/>
+<img src="./open-doodles-sleek.svg" style="width: 10px"/>
